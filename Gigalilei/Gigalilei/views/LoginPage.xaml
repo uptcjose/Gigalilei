@@ -5,7 +5,7 @@
              BindingContext="{Binding Main, Source={ StaticResource Locator}}"
              Title="LOGIN">
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView BindingContext="{Binding Login}">
             <StackLayout  Padding="10,10,10,0" 
            BackgroundColor="White">
             <Image Source="logo"
@@ -19,7 +19,7 @@
                    Text="Gigalilei"
                    TextColor="	#09597E">
             </Label>
-            <Grid>
+            <Grid Margin="10,0" VerticalOptions="CenterAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="3*"/>
@@ -34,15 +34,15 @@
                    Text="User">
                 </Label>
                 <Entry 
-                    Grid.Column="1"
-                    Grid.Row="0"
-                   
+                   Grid.Column="1"
+                   Grid.Row="0"
                    BackgroundColor="White"
                    FontSize="Small"
                    HeightRequest="35"
                    Keyboard="Numeric"
                    Placeholder="Didite el usuario"
-                   TextColor="Black">
+                   TextColor="Black"
+                   Text="{Binding user, Mode=TwoWay}">
                 </Entry>
 
                 <Label  
@@ -62,13 +62,15 @@
                    Placeholder="Didite su Contraseña"
                    HeightRequest="35"
                    IsPassword="True"
-                   TextColor="Black">
+                   TextColor="Black"
+                   Text="{Binding password, Mode=TwoWay}">
                 </Entry>
             </Grid>
 
 
             <ActivityIndicator
-            VerticalOptions="CenterAndExpand">
+                IsRunning="{Binding IsRunning,Mode=TwoWay}"
+                VerticalOptions="CenterAndExpand">
             </ActivityIndicator>
             <StackLayout Margin="10,0"
                     VerticalOptions="CenterAndExpand"
@@ -81,27 +83,29 @@
                    TextColor="#09597E">
                 </Label>
                 <Switch
-                VerticalOptions="End">
+                VerticalOptions="End"
+                IsToggled="{Binding IsRemember,Mode=TwoWay}">
 
                 </Switch>
             </StackLayout>
             <Label 
                 FontSize="Medium"
                 Text="Forgot Your Password"
-                 HorizontalOptions="Center"
-                 TextColor="#09597E"
-                 VerticalOptions="CenterAndExpand">
+                HorizontalOptions="Center"
+                TextColor="#09597E"
+                VerticalOptions="CenterAndExpand">
             </Label>
-            <StackLayout Margin="40,10">
+            <StackLayout Margin="40,0">
                 <Button
                 BackgroundColor="#006863"
-                Text="Login"
-                TextColor="White"
+                Command="{Binding LoginCommand,Mode=TwoWay}"
+                HorizontalOptions="FillAndExpand"
                 FontAttributes="Bold"
                 FontSize="Medium"
-                VerticalOptions="CenterAndExpand"
                 BorderRadius="23"
-                HeightRequest="46">
+                HeightRequest="46"
+                Text="Login"
+                TextColor="White">
                 </Button>
             </StackLayout>
             <StackLayout
