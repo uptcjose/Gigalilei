@@ -7,6 +7,7 @@ namespace Gigalilei.ViewModels
     using GalaSoft.MvvmLight.Command;
     using System.Windows.Input;
     using Xamarin.Forms;
+    using views;
 
     public class LoginViewModel : BaseViewModel
     {
@@ -21,8 +22,8 @@ namespace Gigalilei.ViewModels
         #region properties
         public string user
         {
-            get;
-            set;
+            get { return this.User; }
+            set { SetValue(ref User, value); }
         }
         public string password
         {
@@ -104,16 +105,16 @@ namespace Gigalilei.ViewModels
                 this.isEnabled = false;
             }
           
-            if (this.user == "12")
+            if (this.user == "12" )
             {
                 if (this.password == "12")
                 {
-                    await Application.Current.MainPage.DisplayAlert(
-                       "Bien",
-                       "pagina siguiente",
-                       "Aceptar");
+                    this.User = string.Empty;
+                    this.Password = string.Empty;
                     this.IsRunning = false;
                     this.isEnabled = true;
+                    MainViewModel.GetInstance().Options = new OptionsViewModel(); 
+                    await Application.Current.MainPage.Navigation.PushAsync(new OptionPage());
                 }
                 return;
             }

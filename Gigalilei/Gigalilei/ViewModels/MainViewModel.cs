@@ -13,12 +13,31 @@ namespace Gigalilei.ViewModels
             get;
             set;
         }
+        public OptionsViewModel Options
+        {
+            get;
+            set;
+        }
         #endregion
         #region constructors
         public MainViewModel()
         {
+            instance = this;
             this.Login = new LoginViewModel();
         }
+
+        #region singleton
+        private static MainViewModel instance;
+        public static MainViewModel GetInstance()
+        {
+            if (instance==null)
+            {
+                return new MainViewModel();
+            }
+            return instance;
+
+        }
+        #endregion
         #endregion
     }
 }
