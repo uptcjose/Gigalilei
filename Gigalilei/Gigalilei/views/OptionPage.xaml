@@ -6,9 +6,33 @@
              Title="OPCIONES">
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding Options}">
-            <Label Text="OPCIONES DE PAGINA"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout
+                 HorizontalOptions="Center"
+                 VerticalOptions="EndAndExpand"
+                 Orientation="Horizontal">
+                <Image 
+                    Source="ic_email"
+                    WidthRequest="22"
+                    VerticalOptions="Center">
+                </Image>
+
+                <Label Text="secretaria@gigalileogalilei.edu.co"
+                     FontSize="10"
+                     VerticalOptions="Center"
+                     TextColor="Black">
+                </Label>
+                <Image 
+                     Source="ic_net"
+                     WidthRequest="22">
+                </Image>
+
+                <Label Text="http://www.gigalileogalilei.edu.co"
+                     FontSize="10"
+                     VerticalOptions="Center"
+                       TextColor="Black">
+                </Label>
+
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

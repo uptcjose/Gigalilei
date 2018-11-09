@@ -68,7 +68,7 @@ namespace Gigalilei.ViewModels
                 return;
 
                 this.IsRunning = true;
-                this.isEnabled = false;
+                this.IsEnabled = false;
             }
             
             if (string.IsNullOrEmpty(this.password))
@@ -79,7 +79,7 @@ namespace Gigalilei.ViewModels
                     "Aceptar");
                 return;
                 this.IsRunning = false;
-                this.isEnabled = false;
+                this.IsEnabled = false;
             }
             
 
@@ -92,7 +92,7 @@ namespace Gigalilei.ViewModels
                 this.user = string.Empty;
                 return;
                 this.IsRunning = false;
-                this.isEnabled = false;
+                this.IsEnabled = false;
             }
             if (this.password != "12")
             {
@@ -102,17 +102,17 @@ namespace Gigalilei.ViewModels
                     "Aceptar");
                 this.password = string.Empty;
                 this.IsRunning = false;
-                this.isEnabled = false;
+                this.IsEnabled = false;
             }
           
             if (this.user == "12" )
             {
                 if (this.password == "12")
                 {
-                    this.User = string.Empty;
-                    this.Password = string.Empty;
+                    this.user = string.Empty;
+                    this.password = string.Empty;
                     this.IsRunning = false;
-                    this.isEnabled = true;
+                    this.IsEnabled = true;
                     MainViewModel.GetInstance().Options = new OptionsViewModel(); 
                     await Application.Current.MainPage.Navigation.PushAsync(new OptionPage());
                 }
