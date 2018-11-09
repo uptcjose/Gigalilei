@@ -114,7 +114,7 @@ namespace Gigalilei.ViewModels
                     this.IsRunning = false;
                     this.IsEnabled = true;
                     MainViewModel.GetInstance().Options = new OptionsViewModel(); 
-                    await Application.Current.MainPage.Navigation.PushAsync(new OptionPage());
+                    await Application.Current.MainPage.Navigation.PushAsync(new OptionsPage());
                 }
                 return;
             }
