@@ -1,10 +1,10 @@
 ﻿
 
-using Newtonsoft.Json;
+
 
 namespace Gigalilei.Models
 {
-   
+   using Newtonsoft.Json;
     class Users
     {
        

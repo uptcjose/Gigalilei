@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gigalilei.Android", "Gigali
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gigalilei.iOS", "Gigalilei\Gigalilei.iOS\Gigalilei.iOS.csproj", "{1000AFF1-6F14-441D-80FF-8CEB989BB4DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gigalilei", "Gigalilei\Gigalilei\Gigalilei.csproj", "{E0407266-5090-4B00-9567-034B92225A6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gigalilei", "Gigalilei\Gigalilei\Gigalilei.csproj", "{E0407266-5090-4B00-9567-034B92225A6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
